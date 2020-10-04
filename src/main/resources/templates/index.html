@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Top Page</title>
+ <style>
+  h1{ font-size:18pt; font-weight:bold; color:gray;}
+  body{font-size:13pt; color:gray; margin:5px 25px;} 
+ </style>
+</head>
+<body>
+  <h1>Hello page</h1>
+  <p th:text="${#dates.format(new java.util.Date(),'dd/MMM/yyyy HH:mm')}"></p>
+  <p th:text="${#numbers.formatInteger(1234,7)}"></p>
+  <p th:text="${#strings.toUpperCase('Welcome to Spring.')}"></p>
+  <p th:text="${#strings.isEmpty(string)}"></p>
+  <p th:text="${#strings.defaultString(stringNull,'test')}"></p>
+  <p th:text="${#strings.contains(string,'el')}"></p>
+  <p th:text="${#strings.prepend(string,'prefex:')}"></p>
+  <p th:text="${#strings.append(string,':こんにちは')}"></p>
+  <p th:text="${#strings.arrayJoin(stringArray,',')}"></p>
+  <p th:text="${#strings.listJoin(stringList,'+')}"></p>
+  <p th:text="${#strings.abbreviate(string,5)}"></p>
+  <p th:text="${#numbers.formatInteger(number,3,'COMMA')}"></p>
+  <p th:text="${#arrays.length(stringArray)}"></p>
+  <p th:text="${#arrays.isEmpty(stringList)}"></p>
+  <p>Year: <span th:text="${#dates.year(today)}">2017</span></p>
+  </body>
+</html>
